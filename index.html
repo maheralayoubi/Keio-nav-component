@@ -11,18 +11,36 @@
 </head>
 <style>
 .navbar {
-  margin: 0 20px;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
+}
+.navbar.newNavbar {
+  background: #fff;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
 }
 .logo img{
     width: 259px;
     height: 69px;
-    display: none;
+    margin-left: 20px;
 }
-.show-logo {
+.logo{
+    display: none;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+}
+.logo.show-logo {
   display: block;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .list ul{
@@ -34,12 +52,36 @@
     list-style: none;
     justify-content: space-between;
     font-size: 14px;
-    color: #133167;
+    color: #fff;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.list.newList ul li{
+  margin: 10px 20px;
+  list-style: none;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #133167;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .list ul li i{
     margin: 0 6px;
 }
 .list ul button{
+    color: white;
+    width: 140px;
+    height: 38px;
+    margin: 0 10px;
+    border: none;
+    font-size: 14px;
+    padding: 0;
+    background: #ff000000;
+    border: solid #FFFFFF 1px;
+}
+.list.newList ul button{
     background: #133167;
     color: white;
     width: 140px;
@@ -59,13 +101,14 @@
         display: block !important;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 900px) {
       .navbar {
         margin: 0;
         height: 60px;
         background: #fff;
       }
     .logo {
+      display: block;
       padding: 10px 0;
       margin-left: 10px;
       margin-top: 8px;
@@ -73,31 +116,48 @@
     .logo img{
     width: 110px;
     height: 30px !important;
+    margin-left: 0;
     }
 
     .list{
           display: none;
           display: relative;
         }
-        .list ul{
+    .list ul{
         display: block;
         position: absolute;
-        left: 50px;
-        top: 100px;
         background: #ffff;
         width: 100%;
+        left: -41px;
+        height: 250px;
+        top: 49px;
     }
     .list ul li{
-        margin: 20px 0;
-        padding-left: 10px;
-        position: relative;
-        top: 60px;
+      margin: 20px 0;
+      padding-left: 10px;
+      position: relative;
+      top: 60px;
+      list-style: none;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #133167;
+    }
+    .newList ul li{
+      margin: 20px 0;
+      padding-left: 10px;
+      position: relative;
+      top: 60px;
+      list-style: none;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #133167;
     }
     .list ul button{
         position: relative;
         top: -120px;
+        background: #133167;
     }
-        .click{
+    .click {
         display: block;
        font-size: 35px;
        cursor: pointer;
@@ -109,12 +169,6 @@
 
 }
     @media (max-width: 425px) {
-        .list ul{
-            position: absolute;
-            left: -41px;
-            height: 250px;
-            top: 49px;
-        }
         .list ul button{
             display: inline-block;
     }
@@ -144,10 +198,11 @@
                     </div>
     </nav>
 
+    </main>
+
 
     <script src="http://maheralayoubi.com/files/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
     <script src="http://maheralayoubi.com/files/jquery.js"></script>
 
     <script>
@@ -156,14 +211,19 @@
       });
 
           $(function(){
-     var shrinkHeader = 300;
+     var shrinkHeader = 200;
       $(window).scroll(function() {
         var scroll = getCurrentScroll();
           if ( scroll >= shrinkHeader ) {
                $('.logo').addClass('show-logo');
+               $('.navbar').addClass('newNavbar');
+               $('.list').addClass('newList');
+               $('.list').removeClass('show');
             }
             else {
                 $('.logo').removeClass('show-logo');
+                $('.navbar').removeClass('newNavbar');
+                $('.list').removeClass('newList');
             }
       });
     function getCurrentScroll() {
