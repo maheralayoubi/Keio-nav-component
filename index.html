@@ -208,6 +208,7 @@
         $(".click").click(function(){
         $(".list").toggleClass("show");
         $('.list').removeClass('newList');
+        $('.toggleButton').toggleClass('fa-bars fa-chevron-down');
       });
 
           $(function(){
@@ -223,6 +224,7 @@
             else {
                 $('.logo').removeClass('show-logo');
                 $('.navbar').removeClass('newNavbar');
+                $('.list').removeClass('newList');
                 $('.list').removeClass('newList');
             }
       });
