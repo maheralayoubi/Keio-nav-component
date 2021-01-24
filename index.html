@@ -12,10 +12,17 @@
 <style>
 .navbar {
   margin: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .logo img{
     width: 259px;
     height: 69px;
+    display: none;
+}
+.show-logo {
+  display: block;
 }
 
 .list ul{
@@ -147,6 +154,22 @@
         $(".click").click(function(){
         $(".list").toggleClass("show");
       });
+
+          $(function(){
+     var shrinkHeader = 300;
+      $(window).scroll(function() {
+        var scroll = getCurrentScroll();
+          if ( scroll >= shrinkHeader ) {
+               $('.logo').addClass('show-logo');
+            }
+            else {
+                $('.logo').removeClass('show-logo');
+            }
+      });
+    function getCurrentScroll() {
+        return window.pageYOffset || document.documentElement.scrollTop;
+        }
+    });
       </script>
 </body>
 
