@@ -58,6 +58,9 @@
     -moz-transition: all 0.3s;
     transition: all 0.3s;
 }
+.list ul li a{
+  color: #fff;
+}
 .list.newList ul li{
   margin: 10px 20px;
   list-style: none;
@@ -67,6 +70,9 @@
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+}
+.list.newList ul li a{
+  color: #133167;
 }
 .list ul li i{
     margin: 0 6px;
@@ -143,6 +149,9 @@
       font-size: 14px;
       color: #133167;
     }
+    .list ul li a {
+      color: #133167;
+    }
     .newList ul li{
       margin: 20px 0;
       padding-left: 10px;
@@ -151,6 +160,9 @@
       list-style: none;
       justify-content: space-between;
       font-size: 14px;
+      color: #133167;
+    }
+    .newList ul li a {
       color: #133167;
     }
     .list ul button{
@@ -187,9 +199,19 @@
                             </div>
                             <div class="list ml-auto">
                                 <ul>
-                                    <li><i class="fa fa-caret-right"></i>ホーム</li>
-                                    <li><i class="fa fa-caret-right"></i>アプリの機能</li>
-                                    <li><i class="fa fa-caret-right"></i>よくある質問</li>
+                                    <li><i class="fa fa-caret-right"></i>
+                                    <a href="#">ホーム
+                                    </a>
+                                    </li>
+                                    <li><i class="fa fa-caret-right"></i>
+                                    <a href="#section-1">
+                                        アプリの機能
+                                    </a></li>
+                                    <li><i class="fa fa-caret-right"></i>
+                                    <a href="#section-2">
+                                    よくある質問
+                                    </a>
+                                    </li>
              <button type="button"><i class="fa fa-caret-right"></i>新規登録</button>
             <button type="button"><i class="fa fa-caret-right"></i>サインイン</button>
                                 </ul>
