@@ -248,7 +248,33 @@
     <script src="https://maheralayoubi.com/files/jquery.js"></script>
 
     <script>
+        $(".click").click(function(){
+        $(".list").toggleClass("show");
+        $('.list').removeClass('newList');
+        $('.toggleButton').toggleClass('fa-bars fa-chevron-down');
+      });
 
+          $(function(){
+     var shrinkHeader = 200;
+      $(window).scroll(function() {
+        var scroll = getCurrentScroll();
+          if ( scroll >= shrinkHeader ) {
+               $('.logo').addClass('show-logo');
+               $('.navbar').addClass('newNavbar');
+               $('.list').addClass('newList');
+               $('.list').removeClass('show');
+            }
+            else {
+                $('.logo').removeClass('show-logo');
+                $('.navbar').removeClass('newNavbar');
+                $('.list').removeClass('newList');
+                $('.list').removeClass('newList');
+            }
+      });
+    function getCurrentScroll() {
+        return window.pageYOffset || document.documentElement.scrollTop;
+        }
+    });
       </script>
 </body>
 
